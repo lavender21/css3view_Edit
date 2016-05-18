@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<link rel="stylesheet" href="css/style.css" /> 
+</head>
+<body>
+	<div class="box">
+		<!-- 贝塞尔曲线 -->
+		<div class="left">
+		    <div class="bezier">
+				<canvas id="canvas" width="330" height="500"></canvas>
+			</div>
+		</div>
+		<!-- 运动块与添加的曲线样式 -->
+		<div class="right">
+			<!-- 标题 -->
+			<h1>cubic-bezier(<span class="val">350</span>,<span class="val">50</span class="val">,<span class="val">50</span>,<span class="val">300</span>)<span id="save" class="btn">SAVE</span></h1>
+			<!-- 运动滑块 -->
+			<div class="center" id"main_box">
+				<div class="sport">
+					<h2>Preview&compare<span id="go" class="btn">GO!</span></h2>
+					<h4>
+					<label>Duration</label>
+					<input type="range" min="0" max="10" id="rag" value="2">
+					<span id="secd">2</span>seconds
+					</h4>
+					<!-- 设置曲线运动状态 -->
+					<div class="mod" id="mod">
+						<canvas id="sport1" width="50" height="50"></canvas>
+					</div>
+					<!-- 对比滑块运动状态 -->
+					<div class="mod_two" id="mod_two">
+						<canvas id="sport2" width="50" height="50"></canvas>
+					</div>
+				</div>
+				
+				<!-- 保存的运动状态 -->
+				<div class="state">
+					<h2>Library<span id="import" class="btn">IMPORT</span>
+					<span id="export" class="btn">EXPORT</span></h2>
+					<h4>Click on a curve to compare it with the current one</h4>
+					<div class="content">
+						<div class="canv">
+							<span class="del">x</span>
+							<canvas class="paint" width="100" height="100"></canvas>
+							<span class="pname"></span>
+						</div>
+						<div class="canv">
+							<span class="del">x</span>
+							<canvas class="paint" width="100" height="100"></canvas>
+							<span class="pname"></span>
+						</div>
+						<div class="canv">
+							<span class="del">x</span>
+							<canvas class="paint" width="100" height="100"></canvas>
+							<span class="pname"></span>
+						</div>
+						<div class="canv">
+							<span class="del">x</span>
+							<canvas class="paint" width="100" height="100"></canvas>
+							<span class="pname"></span>
+						</div>
+						
+					</div>
+					<h5><b>Tip</b>: Right click on any library curve and select “Copy Link Address” to get a permalink to it which you can share with others</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="wid" id="wid">
+		<p>To import curves, paste the code below and click “Import”</p>
+		<p>Copy the code and save to a file to export</p>
+		<form>
+			<textarea id="txt_code"></textarea>
+			<div><input type="button" value="IMPORT" id="impt">
+			<input type="button" value="CLOSE" id="close"></div>
+		</form>
+	</div>
+</body>
+<script type="text/javascript" src="js/transition.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>
+<script type="text/javascript" src="js/code.js"></script>
+<script type="text/javascript" src="js/storage.js"></script>
+</html>

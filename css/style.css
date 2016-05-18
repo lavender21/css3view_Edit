@@ -1,0 +1,289 @@
+/*pc机样式*/
+@media screen and (min-width:1024px){
+	.box{
+		display: flex;
+	}
+	.box .right .center{
+		display: flex;
+	}
+	.box .right .state{
+		width:400px;
+		height:500px;
+		margin-left: 20px;
+	}
+}
+
+/*paid样式*/
+@media screen and (min-width: 760px) and (max-width: 1024px){
+	.box{
+		display:flex;
+	}
+	.box .right .state{
+		width:400px;
+		height:500px;
+	}
+}
+
+/*手机端样式*/
+@media screen and (max-width: 760px){
+
+}
+
+
+
+
+
+
+*{
+	margin: 0px;
+	padding:0px;
+	border:0px;
+}
+.box{
+	width:90%;
+	margin:auto;
+	font-family: '微软雅黑';
+}
+
+.box h1{
+	letter-spacing: 2px;
+}
+.box h1 span{
+	color:#ff6699;
+	line-height: 100px;
+}
+/*************************左部贝塞尔曲线样式**********************************/
+.box .left{
+	height:650px;
+	width:330px;
+	background: -webkit-linear-gradient(top,#fff,#eee 70%,#fff);
+	background: -moz-linear-gradient(top,#fff,#eee 70%,#fff);
+	background: linear-gradient(top,#fff,#eee 70%,#fff);
+}
+
+.bezier{
+	width:330px;
+	height:500px;
+	margin-top: 80px;
+}
+.bezier canvas{
+	margin-left: -10px;
+}
+
+/****************************中部运动块样式**********************************/
+.box .right{
+	margin-left: 20px;
+}
+
+
+.box .right .sport{
+	width:450px;
+	height:260px;
+	position: relative;
+}
+/*设置文字样式*/
+.box .right h2{
+	letter-spacing:3px;
+	font-size:28px;
+	font-weight:400;
+}
+.box .right h4{
+	font-weight:400;
+	color:#aaa;
+	margin-bottom: 20px;
+}
+.box .right h5{
+	color:#333;
+	font-weight: 400;
+
+}
+.box .right .btn{
+	height:30px;
+	padding:0px 10px;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	border-radius:6px;
+	background: #CCCCCC;
+	color:#fff;
+	font-size:18px;
+	font-weight: 500;
+	letter-spacing: 0px;
+	transition:all .2s ease;
+}
+.box .right .btn:hover{
+	background: #ff6699;
+	cursor:pointer;
+}
+/*设置滑块样式*/
+.box .right .mod,.box .right .mod_two{
+	width:50px;
+	height:50px;
+	border-radius: 8px;
+	position:absolute;
+	left:0px; 
+}
+.box .right .mod{
+	background:#ff6699;
+}
+.box .right .mod_two{
+	background:#00AABB;
+	margin-top: 60px;
+}
+#sport1{
+	margin: -3px 3px;
+}
+/*设置range的样式*/
+#rag{
+	-webkit-appearance:none;
+	appearance:none;
+	width:200px;
+}
+#rag::-webkit-slider-runnable-track {
+	width:200px;
+	height:15px;
+    border-radius: 10px;
+    background: rgba(255,100,150,0.5);
+    box-shadow:1px 1px 5px 1px #666 inset;
+}
+#rag::-webkit-slider-thumb {
+	-webkit-appearance:none;
+	border-radius: 15px;
+    background:radial-gradient(circle at center,#fff 1%,#FF00aa);
+    width:15px;
+    height: 15px;
+}
+#rag::-moz-range-track {
+  	width:200px;
+	height:15px;
+     box-shadow:1px 1px 5px 1px #666 inset;
+    border-radius: 10px;
+    background: rgba(255,100,150,0.5);
+}
+#rag::-moz-range-thumb {
+	border:none;
+    background:radial-gradient(circle at center,#fff 1%,#FF00aa);
+    height: 15px;
+}
+
+/***************************设置右部存储的曲线样式****************************/
+
+.box .right .state .content{
+	width:360px;
+	height:600;
+	padding:0px 20px;
+	margin-left: -20px;
+
+}
+/*清除浮动*/
+.box .right .state .content:after{
+     content:".";  
+     height:0;  
+     visibility:hidden;  
+     display:block;  
+     clear:both;  
+
+}
+
+.content .canv{
+	width:100px;
+	height: 120px;
+	margin:10px 20px 10px 0px;
+	float:left;
+	position: relative;
+}
+
+.box .right .state .content .paint{
+	border-radius:10px;
+	background:rgba(210,210,210,0.6);
+	transition:all 1.5s ease;
+}
+.content .canv .del{
+	width:20px;
+	height:20px;
+	border-radius:20px;
+	line-height: 15px;
+	text-align: center;
+	color:#fff;
+	background: #000;
+	box-shadow:0px 0px 3px 1px #999;
+
+	position:absolute;
+	right:-5px;
+	top:-5px;
+	z-index: 2;
+	display:none;
+}
+.content .canv .pname{
+	display: block;
+	width:100%;
+	height:20px;
+	text-align:center;
+	line-height:20px;
+	color:#999;
+	font-size:16px;
+
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+
+/********************************弹出窗口样式*********************************/
+.wid{
+	width:600px;
+	height:430px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin-left: -300px;
+	margin-top: -250px;
+	z-index: 10;
+
+	border-radius:10px;
+	background:rgba(30,30,30,0.7);
+	display: none;
+}
+.wid p{
+	text-align: center;
+	color:#fff;
+	font-family: "微软雅黑";
+	line-height: 50px;
+	font-weight: 700;
+	display: none;
+}
+.wid textarea{
+	width:540px;
+	height:280px;
+	margin:10px 20px;
+	padding:10px;
+
+	background:#eee;
+	border-radius: 5px;
+	box-shadow: 0px 0px 2px 2px #000 inset;
+
+	font-size: 18px;
+	font-family: "微软雅黑";
+	font-weight: 500;
+}
+.wid input{
+	width:90px;
+	height:35px;
+	background:#000;
+	border-radius:5px;
+
+	text-align:center;
+	line-height: 35px;
+	color:#fff;
+	font-size: 18px;
+}
+.wid div{
+	width:200px;
+	margin:auto;
+}
+.close{
+	margin-left:40px;
+}
+.wid input:hover{
+	background: #ff3399;
+	cursor:pointer;
+}
